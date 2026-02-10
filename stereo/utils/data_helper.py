@@ -854,7 +854,7 @@ def split_for_ann_based_stereo_exp_data(data: AnnBasedStereoExpData = None):
                     sct_key_1 = f'{sct_key}_{sct_id}_1'
                     sct_key_2 = f'{sct_key}_{sct_id}_2'
                     umi_cells = pd.Index(new_data.adata.uns[sct_key_2]['umi_cells'])
-                    umi_cells = umi_cells.str.resplace('-\d+$', '', regex=True).to_numpy()
+                    umi_cells = umi_cells.str.replace('-\d+$', '', regex=True).to_numpy()
                     cells_bool_list = np.isin(umi_cells, new_data.cell_names)
                     new_data.adata.uns[sct_key_1]['counts'] = new_data.adata.uns[sct_key_1]['counts'][:, cells_bool_list]
                     new_data.adata.uns[sct_key_1]['data'] = new_data.adata.uns[sct_key_1]['data'][:, cells_bool_list]
