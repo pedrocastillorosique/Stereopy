@@ -711,7 +711,7 @@ class StPipeline(object):
         seed_use
             random seed.
         filter_raw
-            because this function will filter data, whether to filter raw data meanwhile by setting `filter_raw`.
+            because this function will filter data, whether to also filter raw data.
         layer
             the key of layer to be used instead of the data.exp_matrix.
         add_layer
